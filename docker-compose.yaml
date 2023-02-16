@@ -9,11 +9,10 @@ services:
       dockerfile: Dockerfile
     container_name: api
     volumes:
-      - ./backend:/app
-      - /home/ipam/artifacts/:/artifacts
-      - /home/ipam/terraform/:/terraform
-      - /home/ipam/app_scripts:/scripts
-      - /home/ipam/files/:/files
+      - $OS_ARTIFACTS_PATH:/artifacts
+      - $OS_TF_PATH:/terraform
+      - $OS_SCRIPTS_PATH:/scripts
+      - $OS_FILES_PATH:/files
       - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
       - mongodb
