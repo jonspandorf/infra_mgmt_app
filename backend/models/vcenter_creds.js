@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-// const mongooseUniqueValidator = require('mongoose-unique-validator');
 
 const vsphereCredsScehma = new Schema({
     userId: { type: Schema.Types.ObjectId, ref: 'User' , required: true },
@@ -8,6 +7,5 @@ const vsphereCredsScehma = new Schema({
     password: { type: String, required: true}
 })
 
-// userSchema.plugin(mongooseUniqueValidator)
 
 module.exports = model('VsphereCreds', userSchema, 'vspherecreds')
