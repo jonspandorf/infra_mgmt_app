@@ -1,0 +1,56 @@
+version: '3'
+services:
+########################
+## BACKEND WEB SERVER ##
+########################
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: api
+    volumes:
+      - ./backend:/app
+      - /home/ipam/artifacts/:/artifacts
+      - /home/ipam/terraform/:/terraform
+      - /home/ipam/app_scripts:/scripts
+      - /home/ipam/files/:/files
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - mongodb
+    restart: always
+    env_file: ./backend/.env
+    ports:
+      - "5000:5000" 
+########################
+##     MONGODB        ##
+########################
+  mongodb:
+    hostname: mongodb
+    image: mongo
+    volumes:
+      - data-volume:/data/db
+    ports:
+      - "27018:27017"
+    restart: always
+
+########################
+## FRONTEND INTERFACE ##
+########################
+  client:
+    stdin_open: true
+    depends_on:
+      - api
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile.client
+      args:
+        - API_URL=/api
+    ports:
+      - "80:80"
+    restart: always
+
+volumes:
+    data-volume:
+    # node_modules:
+    web-root:
+      driver: local

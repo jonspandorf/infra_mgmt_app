@@ -1,0 +1,32 @@
+CREATE VM PAGE
+
+STEP 1
+Start only with DHCP
+Able to produce data and send to server
+
+
+STEP 2
+Available collections with cidrs from server
+Send to server data including cidr,
+
+STEP 3
+Generate list of ips from server and return to user. spread in values 
+produce data and send to server 
+
+STEP 4
+Indicate if RP name and if RP  is needed
+
+STEP 4
+Produce TF json module. call docker from os and check if it is deployed 
+
+CREATE USERS
+STEP 1 
+Improve Permissions to make sure array is updated
+
+STEP 2
+Improve Layout 
+
+
+CREATE AUTH
+
+IMPROVE APP LAyout
