@@ -10,6 +10,5 @@ const vsphereSchema = new Schema({
     admin: { type: Schema.Types.ObjectId, ref: 'User' }
 })
 
-// userSchema.plugin(mongooseUniqueValidator)
 
 module.exports = model('VsphereServer', vsphereSchema, 'vspheres')

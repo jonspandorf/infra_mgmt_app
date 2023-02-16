@@ -54,15 +54,6 @@ const addressSchema = new Schema({
     },
 });
 
-// const models = {};
 
-// const CreateCollection = (name) => {
-//     if (!(name in models)) {
-
-//         models[name] = mongoose.model(name,addressSchema)
-//     } 
-//     return models[name]
-
-// }
 
 module.exports =  model('Address', addressSchema, 'addresses')

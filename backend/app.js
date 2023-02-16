@@ -60,7 +60,7 @@ mongoose
 .connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true } )
 .then(() => {
     app.listen(port, () => {
-        console.log(`server is running at port ${port} and db is on port ${MONGO_PORT} at ${MONGO_HOSTNAME}`)
+        console.log(`server is running at port ${port} `)
     })
 })
 .catch ((err) => {

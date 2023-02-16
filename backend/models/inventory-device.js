@@ -1,6 +1,4 @@
 const { Schema, model } = require('mongoose');
-const crypto = require('crypto')
-// const mongooseUniqueValidator = require('mongoose-unique-validator');
 
 const inventoryDeviceSchema = new Schema({
     type: { type: String, required: true },
