@@ -85,7 +85,7 @@ const spinTerraformContainer = async (id, envs, vols,  script, args=[], entrypoi
 
     const tf_promise = new Promise(async (res,rej) => {
 
-      const tf_container = spawn('docker',['run','--rm','-i', ...envs, ...vols, ...entrypoint, 'berlioz-devops-image',script,...args])
+      const tf_container = spawn('docker',['run','--rm','-i', ...envs, ...vols, ...entrypoint, 'berliozintegrator/cool-devops-worker',script,...args])
 
 
       tf_container.stdout.on('data', (data) => {
